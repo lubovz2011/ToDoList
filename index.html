@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vampiro+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/pyro.css">
+</head>
+
+<body class="layout4">
+    <header>
+        <i class="fa fa-refresh"></i>
+        <i class="fa fa-info"></i>
+        <h1>ToDo<sup>.</sup>or<sup>.</sup>not<sup>.</sup>ToDo</h1>
+    </header>
+    <main>
+        <section class="controls">
+            <input type="text" class="text-input" value="" placeholder="Type text to search or add a new task">
+            <input type="color" class="color-input" value="">
+            <button class="btn btn-add"><i class="fa fa-plus"></i></button>
+            <button class="btn btn-clear"><i class="fa fa-trash"></i></button>
+        </section>
+        <section class="description">
+            <p>This is the todo app</p>
+            <p> - use input for search or add a new task</p>
+            <p> - use color palette to change text color for tasks</p>
+            <p> - use <i class="fa fa-plus"></i> to add a new task</p>
+            <p> - use <i class="fa fa-trash"></i> to remove all tasks</p>
+            <p> - use <i class="fa fa-check"></i> to complete the task</p>
+            <p> - use <i class="fa fa-undo"></i> to restore the task</p>
+            <p> - use <i class="fa fa-times"></i> to remove the task</p>
+            <p> - press enter button to add a new task</p>
+            <p> - press esc button to clear input</p>
+        </section>
+        <ul class="list"></ul>
+    </main>
+    <footer>&copy;Luba Langleben</footer>
+    <div class="modal-wrapper"></div>
+    <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

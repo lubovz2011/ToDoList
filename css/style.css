@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 14px;
+    height: 100%;
+    font-family: 'Bad Script', cursive;
+    --info-bg: #fff;
+    --header-color: black;
+    --footer-color: black;
+    --list-odd-item: #454440bd;
+    --list-even-item: #706a5c73;
+}
+/*<editor-fold desc="base layout">*/
+body{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    background-image: url("../images/bgPink.jpg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+}
+
+header{
+    position: relative;
+    flex-shrink: 0;
+    text-align: center;
+    color: var(--header-color);
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+header i.fa-refresh,
+header i.fa-info{
+    font-size: 1.5rem;
+    position: absolute;
+    top:18px;
+    z-index: 5;
+}
+
+header i.fa-refresh{
+    left: 18px;
+}
+header i.fa-info {
+    right: 18px;
+}
+
+main{
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+}
+
+footer{
+    color: var(--footer-color);
+    font-size: 1rem;
+    text-align: center;
+    padding: 5px 20px;
+    flex-shrink: 0;
+}
+
+/*mouseover info bg*/
+.modal-wrapper{
+    position: fixed;
+    display: none;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #00000052;
+    z-index: 1;
+}
+/*</editor-fold>*/
+
+.description {
+    font-size: 1.2em;
+    max-width: 600px;
+    width: 100%;
+    background-color: var(--info-bg);
+    padding: 10px 20px;
+    margin-top: 5px;
+    z-index: 10;
+}
+
+/*<editor-fold desc="controls">*/
+.controls {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden; /*without scroll*/
+}
+
+.controls .text-input,
+.controls .color-input,
+.controls .btn {
+    flex-grow: 1;
+    flex-shrink: 0;
+    height:100%;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.controls .text-input{
+    flex-grow: 10;
+    flex-basis: auto;
+}
+/*</editor-fold>*/
+/*<editor-fold desc="list">*/
+ul.list {
+    overflow: auto; /*scroll*/
+    width: 100%;
+    max-width: 600px;
+    list-style: none; /*without dots*/
+    font-size: 1.2rem;
+    position: absolute;
+    top: 45px;
+    bottom: 5px;
+}
+
+ul.list li{
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    background-color: var(--list-odd-item);
+    position: relative;
+    overflow: hidden;
+}
+
+ul.list li:nth-child(even) {
+    background-color: var(--list-even-item);
+}
+
+ul.list li:first-child{
+    margin-top: 0;
+}
+
+ul.list li:last-child{
+    margin-bottom: 0;
+}
+
+ul.list li.not-found{
+    display: none;
+}
+
+ul.list li span{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ul.list li.checked span{
+    text-decoration: line-through;
+}
+
+ul.list li i{
+    position: relative;
+    flex-shrink: 0;
+    flex-basis: 0;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    transition: left .2s ease 0s, right .2s ease 0s;
+}
+
+ul.list li i.fa-times{
+    background-color: red;
+    right: -50px;
+}
+
+ul.list li i.fa-check,
+ul.list li i.fa-undo{
+    background-color: limegreen;
+    left: -50px;
+}
+
+ul.list li:hover i.fa-times{
+    right: 0;
+}
+ul.list li:hover i.fa-check,
+ul.list li:hover i.fa-undo{
+    left:0;
+}
+
+ul.list li:hover span{
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="Layout1 - pencils">*/
+body.layout1 {
+    background-image: url("../images/pencils.jpeg");
+    background-position: bottom center;
+    font-family: 'Yellowtail', cursive;
+}
+body.layout1 .description,
+body.layout1 ul.list{
+    font-size: 1.5rem;
+}
+
+body.layout1 ul.list li{
+    background-color: #ebe6ecb0;
+}
+/*</editor-fold>*/
+/*<editor-fold desc="Layout2 - matte">*/
+body.layout2 {
+    background-image: url("../images/matte.jpeg");
+    font-family: 'Yellowtail', cursive;
+}
+
+body.layout2 .description,
+body.layout2 ul.list{
+    font-size: 1.5rem;
+}
+
+body.layout2 ul.list li{
+    background-color: transparent;
+    border-bottom: 1px solid black;
+}
+/*</editor-fold>*/
+/*<editor-fold desc="Layout3 - pergament">*/
+body.layout3 {
+    background-image: url("../images/pergament.jpeg");
+    font-family: 'Vampiro One', cursive;
+}
+
+/*</editor-fold>*/
+/*<editor-fold desc="Layout4 - pergament">*/
+body.layout4 {
+    background-image: url("../images/lights.jpeg");
+}
+
+ul.list li:nth-child(odd) {
+    background-color: #d4bec091;
+}
+ul.list li:nth-child(even) {
+    background-color: #a7d2e38c;
+}
+/*</editor-fold>*/
